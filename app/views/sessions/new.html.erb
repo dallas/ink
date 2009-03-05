@@ -1,0 +1,7 @@
+<%- form_tag sessions_path do -%>
+	<label for="session_password">
+		Password<br />
+		<%= password_field_tag :password %>
+	</label>
+	<%= submit_tag 'Login' %>
+<%- end -%>

@@ -1,0 +1,17 @@
+<h1>Editing tag</h1>
+
+<%= error_messages_for :tag %>
+
+<% form_for(@tag) do |f| %>
+  <p>
+    <b>Name</b><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @tag %> |
+<%= link_to 'Back', tags_path %>

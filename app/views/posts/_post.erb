@@ -1,0 +1,67 @@
+<div id="post" class="post">
+	<div class="post_header">
+		<h2 class="post_title"><%= post.textilized_title %></h2>
+		<div class="post_meta">
+			<div class="post_meta_section post_date"><%= date_of_post(post) %></div>
+			<%- if Feature.active?(:comments) -%>
+				<div class="post_meta_section post_comments">
+					<a href="#post_comments">
+						<h6>Comments</h6>
+						<h4 class="number_of_comments"><%= post.comments_count %></h4>
+					</a>
+				</div>	
+			<%- end -%>
+			<%- if Feature.active?(:tags) -%>
+				<div class="post_meta_section post_tags">
+					<%- if post.tags.count > 0 -%>
+						<h6>Published in</h6>
+						<h4><%= post_tags_links(post) %></h4>
+					<%- end -%>
+				</div>
+			<%- end -%>
+			<br class="clear" />
+		</div>
+		<br class="clear" />
+	</div>
+	<br class="clear" />
+	<div class="post_content">
+		<div class="column first_column">
+			<%- for image in post.images -%>
+				<%= link_to(image_tag(image.public_filename(:post), :class => 'with_border'), [@post, image]) %>
+			<%- end -%>
+			&nbsp;
+		</div>
+		<div class="column second_column">
+			<div class="post_body">
+				<%= post.textilized_body %>
+			</div>
+		</div>
+		<br class="clear" />
+	</div>
+	<br class="clear" />
+	<%- if Feature.active?(:comments) -%>
+		<div id="post_comments">
+			<%- unless @comments.blank? -%>
+				<h3>Comments</h3>
+				<div id="comments">
+					<p id="add_a_comment"><%= link_to('Add a Comment', '#add_comment') %></p>
+					<%= render :partial => @comments %>
+				</div>
+			<%- end -%>
+			<h3>Add a Comment</h3>
+			<div id="add_comment">
+				<%- form_for([@post, @comment]) do |f| -%>
+					<%= render(:partial => 'comments/form', :locals => { :f => f, :submit_text => 'Create' }) %>
+				<%- end -%>
+			</div>
+		</div>
+	<%- end -%>
+	<div class="post_footer">
+		<%- if admin? -%>
+			<div class="post_actions">
+				<%= link_to 'Edit', edit_post_path(post) %> |
+				<%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %>
+			</div>
+		<%- end -%>
+	</div>
+</div>

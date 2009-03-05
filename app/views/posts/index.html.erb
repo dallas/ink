@@ -1,0 +1,9 @@
+<div id="posts">
+	<%- for post in @posts -%>
+		<%= render :partial => 'post_in_list', :locals => { :post => post } %>
+	<%- end -%>
+</div>
+
+<br />
+
+<%= link_to 'New post', new_post_path if admin? %>

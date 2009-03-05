@@ -1,0 +1,32 @@
+<h1>Listing images</h1>
+
+<table>
+  <tr>
+    <th>Parent</th>
+    <th>Content type</th>
+    <th>Filename</th>
+    <th>Thumbnail</th>
+    <th>Size</th>
+    <th>Width</th>
+    <th>Height</th>
+  </tr>
+
+<% for file in @file_uploads %>
+  <tr>
+    <td><%=h file.parent_id %></td>
+    <td><%=h file.content_type %></td>
+    <td><%=h file.filename %></td>
+    <td><%=h file.thumbnail %></td>
+    <td><%=h file.size %></td>
+    <td><%=h file.width %></td>
+    <td><%=h file.height %></td>
+    <td><%= link_to 'Show', file %></td>
+    <td><%= link_to 'Edit', edit_file_upload_path(file) %></td>
+    <td><%= link_to 'Destroy', file, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Upload a File', new_file_upload_path %>

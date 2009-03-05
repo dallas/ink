@@ -1,0 +1,9 @@
+<div id="comment_<%= comment.id %>" class="comment">
+	<p class="comment_meta">
+		<span class="comment_name"><%= link_to_unless comment.website.blank?, comment.name, comment.website_url %></span>
+		<span class="comment_date"><%= comment_date(comment) %></span>
+	</p>
+	<div class="comment_body">
+		<%= comment.textilized_body %>
+	</div>
+</div>

@@ -1,0 +1,14 @@
+<a href="<%= pretty_post_url(post) %>" class="post">
+	<span class="column first_column">
+		<%= !post.images.blank? ?
+			image_tag(post.images.first.public_filename(:thumb), :class => 'with_border') :
+			'&nbsp;' %>
+	</span>
+	<span class="column second_column">
+		<span class="post_title"><%= post.textilized_title %></span>
+		<span class="post_teaser"><%= post.teaser %></span>
+	</span>
+	<span class="comments_counter"><%= post.comments_count %></span>
+	<br class="clear" />
+</a>
+	

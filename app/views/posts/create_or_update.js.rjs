@@ -1,0 +1,7 @@
+unless @post.errors.length > 0
+	flash.now[:post_notice] = flash.delete(:post_notice)
+	page.replace 'post_form_wrapper', :partial => 'posts/form', :locals => { :post => @post, :edit => true })
+else
+	flash.now[:post_error] = @post.errors.full_messages.join('<br />')
+	page.replace 'post_form_wrapper', :partial => 'posts/form', :locals => { :post => @post })
+end

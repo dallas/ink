@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @comment.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @comment.email %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @comment.body %>
+</p>
+
+
+<%- if admin? -%><%= link_to 'Edit', edit_comment_path(@comment) %> | <%- end -%>
+<%= link_to 'Back', comments_path %>

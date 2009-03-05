@@ -1,0 +1,12 @@
+# the usual suspects
+.DS_Store
+log/*.log
+tmp/**/*
+config/database.yml
+config/environment.rb
+db/*.sqlite3
+
+# for blog customization
+app/views/content/*
+public/stylesheets/*.css
+public/uploads

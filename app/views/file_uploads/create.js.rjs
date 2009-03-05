@@ -1,0 +1,6 @@
+unless @file_upload.errors.length > 0
+	page.insert_html :bottom, 'post_photos', :partial => @file_upload
+	page.replace_html 'messages_for_file_upload', flash.delete(:notice)
+else
+	page.replace 'messages_for_file_upload', messages_for(:file_upload)
+end

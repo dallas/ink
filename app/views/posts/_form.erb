@@ -1,0 +1,52 @@
+<%- edit = !@post.new_record? -%>
+
+<div id="post_form_wrapper">
+	<div id="post_column" class="column">
+		<h3><%= edit ? 'Edit this' : 'Write a new' %> post</h3>
+		<div id="post_form_container">
+			<%= messages_for :post %>
+			<%- form_for(@post) do |post| -%>
+				<%= post.hidden_field :temp_id unless @post.temp_id.blank? %>
+				<div class="row">
+					<%= post.label :title %> <%= textile %><br />
+					<%= post.text_field :title, :tabindex => 1 %>
+				</div>
+				<div class="row">
+					<%= post.label :body %> <%= textile %><br />
+					<%= post.text_area :body, :tabindex => 2 %>
+				</div>
+				<div class="row">
+					<%= post.label :post_at %><br />
+					<%= post.date_select :post_at, :disabled => @post.save_for_later %>
+					<%= post.hidden_field 'post_at(4i)', :value => Time.now.strftime('%H') %>
+					<%= post.hidden_field 'post_at(5i)', :value => Time.now.min %><br />
+					<%= post.check_box :save_for_later,
+						:onchange => %(post_at = $$('#post_post_at_1i', '#post_post_at_2i', '#post_post_at_3i'); if ($F(this)) post_at.invoke('disable'); else post_at.invoke('enable')) %>
+					<%= post.label :save_for_later, 'Or save it for later. <small><em>(Experimental)</em></small>' %>
+				</div>
+				<div class="row submit"><%= post.submit "#{edit ? 'Update' : 'Create'} Post", :tabindex => 3 %></div>
+			<%- end -%>
+		</div>
+	</div>
+
+	<div id="post_images_column" class="column">
+		<h3>Add photos to this post</h3>
+		<div id="post_images_form_container">
+			<%= messages_for :file_upload %>
+			<%- form_for(:file_upload, :url => formatted_file_uploads_path(:format => 'js'), :html => { :multipart => true, :target => 'upload_frame' }) do |image| -%>
+				<%= image.hidden_field :post_id, :value => @post.id || @post.temp_id %>
+				<div class="row">
+					<%= image.label :uploaded_data, "&nbsp;" %><br />
+					<%= image.file_field :uploaded_data, :tabindex => 4 %>
+				</div>
+				<div class="row submit"><%= image.submit 'Upload', :tabindex => 5 %></div>
+			<%- end -%>
+			<iframe id="upload_frame" name="upload_frame" style="width: 1px; height: 1px; border: 0px;" src="about:blank"></iframe>
+
+			<div id="post_photos">
+				<%= render :partial => [@post.images, (FileUpload.find_all_by_post_id(@post.temp_id) unless @post.temp_id.blank?)].compact.flatten %>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>

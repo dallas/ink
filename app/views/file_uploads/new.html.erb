@@ -1,0 +1,11 @@
+<%= error_messages_for :file_upload %>
+
+<%- form_for(@file_upload, :html => { :multipart => true }) do |f| -%>
+	<p>
+		<%= f.label 'file_upload', 'Upload an Image:' %>
+		<%= f.file_field :uploaded_data %>
+	</p>
+	<p>
+		<%= f.submit 'Upload' %>
+	</p>
+<%- end -%>

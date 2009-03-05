@@ -1,0 +1,8 @@
+<p>
+  <b>Name:</b>
+  <%=h @tag.name %>
+</p>
+
+
+<%- if admin? -%><%= link_to 'Edit', edit_tag_path(@tag) %> | <%- end -%>
+<%= link_to 'Back', tags_path %>

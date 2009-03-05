@@ -1,0 +1,27 @@
+<%- if flash[:comment_error] -%><p class="error"><%= flash[:comment_error] %></p><%- end -%>
+
+<%= f.hidden_field :post_id %>
+
+<div class="row">
+	<%= f.label :name, 'Your Name' %><br />
+	<%= f.text_field :name %>
+</div>
+
+<div class="row">
+	<%= f.label :email, 'Your Email <em>(will never be made public)</em>' %><br />
+	<%= f.text_field :email %>
+</div>
+
+<div class="row">
+	<%= f.label :website, 'Your Website <span id="comment_website_http_label">http://</span>' %><br />
+	<%= f.text_field :website %>
+</div>
+
+<div class="row">
+	<%= f.label :body, 'Comment' %><br />
+	<%= f.text_area :body %>
+</div>
+
+<div class="row submit">
+	<%= f.submit 'Add Comment' %>
+</div>
