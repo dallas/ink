@@ -8,12 +8,12 @@
 	<link rel="shortcut icon" href="<%= image_path '/favicon.ico' %>" type="image/x-icon">
 	<link rel="icon" href="<%= image_path '/favicon.ico' %>" type="image/x-icon">
 	
-	<title><%= BLOGTITLE %></title>
+	<title><%= SITETITLE %></title>
 	
 	<%= stylesheet_link_tag 'ink/base' %>
 	
-	<%# uncomment this and add the public/stylesheets/styles.css file for custom styles %>
-	<%#= stylesheet_link_tag 'styles' %>
+	<%# comment this out or remove it if you remove the public/stylesheets/styles.css file %>
+	<%= stylesheet_link_tag 'styles' %>
 	
 	<%= yield :stylesheets %>
 	

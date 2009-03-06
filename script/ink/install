@@ -34,8 +34,8 @@ puts	'', "If you haven't already, go and edit config/environment.rb for your blo
 			"You'll specifically want to edit these lines",
 				"    PASSWORD   = 'secret'",
 				"    BLOGNAME   = 'ink'",
-				"    BLOGTITLE  = 'using ink to write a blog'",
-				"    BLOGAUTHOR = 'pen'"
+				"    BLOGAUTHOR = 'pen'",
+				"    SITETITLE  = 'welcome to ink'"
 				
 puts	'',
 			"###############################################################",
@@ -45,6 +45,6 @@ puts	'',
 			"Put design files in design/",
 			"Put images for sit in public/images/"
 
-puts '', "Run the migrations and enjoy! rake db:migrate"
+puts '', "Run the migrations and enjoy\! rake db:migrate"
 
 puts

@@ -58,7 +58,7 @@ Rails::Initializer.run do |config|
   # config.active_record.default_timezone = :utc
 end
 
-PASSWORD = 'secret'
-BLOGNAME = 'ink'
-BLOGTITLE = 'using ink to write a blog'
-BLOGAUTHOR = 'pen'
+PASSWORD	= 'secret'
+BLOGNAME	= 'ink'
+BLOGAUTHOR	= 'pen'
+SITETITLE	= 'welcome to ink'
