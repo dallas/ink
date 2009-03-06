@@ -8,5 +8,6 @@ db/*.sqlite3
 
 # for blog customization
 app/views/content/*
+design/*
 public/stylesheets/*.css
 public/uploads/**/**/*

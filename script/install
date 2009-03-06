@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+
+puts	'', "Installing ink...", ''
+
+require 'FileUtils' rescue puts "Please make sure you have Ruby 1.8.4 and the FileUtils module."
+
+basedir = File.dirname(__FILE__) + '/../'
+
+{	'config/environment.rb.dist' => 'config/environment.rb',
+	'config/database.yml.dist' => 'config/database.yml'
+}.each do |original,copy|
+	unless File.exists?(basedir + copy)
+		FileUtils.cp(basedir + original, basedir + copy)
+		puts "copied #{original} to #{copy}"
+	else
+		puts "skipped existing file #{copy}"
+	end
+end
+
+FileUtils.mkpath('app/views/content')
+
+[	'app/views/content/_footer.html.erb',
+	'public/stylesheets/styles.css'
+].each do |file|
+	unless File.exists?(basedir + file)
+		FileUtils.touch(basedir + file)
+		puts "created #{file} file"
+	else
+		puts "skipped existing file #{file}"
+	end
+end
+
+puts	'', "If you haven't already, go and edit config/environment.rb for your blog!",
+			"You'll specifically want to edit these lines",
+				"    PASSWORD   = 'secret'",
+				"    BLOGNAME   = 'ink'",
+				"    BLOGTITLE  = 'using ink to write a blog'",
+				"    BLOGAUTHOR = 'pen'"
+
+puts '', "Put footer content in app/views/content/_footer.html.erb"
+puts '', "Put styles in public/stylesheets/styles.css"
+puts

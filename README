@@ -1,0 +1,28 @@
+Hi, and welcome to my first ever public Rails project.
+So very excite!
+
+Anyway, to get started with this stuff, just run script/install.
+
+After that, you'll want to edit these lines of config/environment.rb:
+    PASSWORD   = 'secret'
+    BLOGNAME   = 'ink'
+    BLOGTITLE  = 'using ink to write a blog'
+    BLOGAUTHOR = 'pen'
+
+I am aware that the current "authentication" system is quite janky, but I did warn you.
+I told you this was a _simple_ blog platform and that it is also my _very first_ public project.
+
+So you, like me, will just have to endure.
+
+
+Some things that it might be nice to know (after running script/install, of course):
+
+	- There is a place for you to put some footer content at
+		app/views/content/_footer.html.erb
+	- There is a design/ directory where you can put whatever design files you need
+		(such as design/ink/*.psd)
+	- Any and all styles you put in public/stylesheets/ (such as public/stylesheets/styles.css)
+		will not be harmed by future updates ink only needs the stylesheets in public/stylesheets/ink/
+	- Pretty much, if you come across a directory or file named ink or that has ink as a prominent part of its name,
+		don't touch it and we should all be okay.
+	
