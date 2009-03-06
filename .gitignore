@@ -10,5 +10,5 @@ db/*.sqlite3
 app/views/content/*
 design/*
 public/stylesheets/*.css
-public/images/**/**/**/**/**/**/**/**/*
+public/images/*
 public/uploads/**/**/*
