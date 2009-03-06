@@ -15,7 +15,7 @@ I told you this was a _simple_ blog platform and that it is also my _very first_
 So you, like me, will just have to endure.
 
 
-Some things that it might be nice to know (after running script/install, of course):
+Some things that it might be nice to know (after running script/ink/install, of course):
 
 	- There is a place for you to put some footer content at
 		app/views/content/_footer.html.erb
