@@ -9,4 +9,4 @@ db/*.sqlite3
 # for blog customization
 app/views/content/*
 public/stylesheets/*.css
-public/uploads
+public/uploads/**/**/*

@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
-  protect_from_forgery # :secret => '32-character hexidecimal secret'
+  protect_from_forgery # :secret => 'e5f9037eaf3cf4d286546f28d09138db'
 
 	helper_method :pretty_post_url, :user_session, :admin?
 	
