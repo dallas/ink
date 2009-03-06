@@ -10,9 +10,9 @@ After that, you'll want to edit these lines of config/environment.rb:
 	SITETITLE  = 'welcome to ink'
 As well as provide a unique session key and secret:
 	config.action_controller.session = {
-   	  :session_key => '_my_site_ink_session',
-      :secret      => '128-bit hexidecimal key'
-  	}
+	  :session_key => '_my_site_ink_session',
+	  :secret      => '128-bit hexidecimal key'
+	}
 
 I am aware that the current "authentication" system is quite janky, but I did warn you.
 I told you this was a _simple_ blog platform and that it is also my _very first_ public project.
