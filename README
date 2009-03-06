@@ -20,7 +20,7 @@ Some things that it might be nice to know (after running script/ink/install, of 
 	- There is a place for you to put some footer content at
 		app/views/content/_footer.html.erb
 	- There is a design/ directory where you can put whatever design files you need
-		(such as design/ink/*.psd)
+		(such as design/MyLogo.psd)
 	- Any and all styles you put in public/stylesheets/ (such as public/stylesheets/styles.css)
 		will not be harmed by future updates ink only needs the stylesheets in public/stylesheets/ink/
 	- Pretty much, if you come across a directory or file named ink or that has ink as a prominent part of its name,
