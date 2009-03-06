@@ -44,5 +44,7 @@ puts	'',
 			"Put styles in public/stylesheets/styles.css",
 			"Put design files in design/",
 			"Put images for sit in public/images/"
-			
+
+puts '', "Run the migrations and enjoy! rake db:migrate"
+
 puts
