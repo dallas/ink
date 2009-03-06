@@ -4,7 +4,7 @@ puts	'', "Installing ink...", ''
 
 require 'FileUtils' rescue puts "Please make sure you have Ruby 1.8.4 and the FileUtils module."
 
-basedir = File.dirname(__FILE__) + '/../'
+basedir = File.dirname(__FILE__) + '/../../'
 
 {	'config/environment.rb.dist' => 'config/environment.rb',
 	'config/database.yml.dist' => 'config/database.yml'
@@ -36,7 +36,13 @@ puts	'', "If you haven't already, go and edit config/environment.rb for your blo
 				"    BLOGNAME   = 'ink'",
 				"    BLOGTITLE  = 'using ink to write a blog'",
 				"    BLOGAUTHOR = 'pen'"
-
-puts '', "Put footer content in app/views/content/_footer.html.erb"
-puts '', "Put styles in public/stylesheets/styles.css"
+				
+puts	'',
+			"###############################################################",
+			"CUSTOMIZATION",
+			"Put footer content in app/views/content/_footer.html.erb",
+			"Put styles in public/stylesheets/styles.css",
+			"Put design files in design/",
+			"Put images for sit in public/images/"
+			
 puts

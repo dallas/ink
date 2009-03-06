@@ -1,7 +1,7 @@
 Hi, and welcome to my first ever public Rails project.
 So very excite!
 
-Anyway, to get started with this stuff, just run script/install.
+Anyway, to get started with this stuff, just run script/ink/install.
 
 After that, you'll want to edit these lines of config/environment.rb:
     PASSWORD   = 'secret'
