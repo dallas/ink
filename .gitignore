@@ -1,14 +1,4 @@
-# the usual suspects
-.DS_Store
+.bundle
+db/*.sqlite3
 log/*.log
 tmp/**/*
-config/database.yml
-config/environment.rb
-db/*.sqlite3
-
-# for blog customization
-app/views/content/*
-design/*
-public/stylesheets/*.css
-public/images/*
-public/uploads/**/**/*

@@ -1,0 +1,40 @@
+Hi, and welcome to my first ever public Rails project.
+So very excite!
+
+Anyway, to get started with this stuff, just run script/ink/install.
+
+After that, you'll want to edit these lines of config/environment.rb:
+	PASSWORD   = 'secret'
+	BLOGNAME   = 'ink'
+	BLOGAUTHOR = 'pen'
+	SITETITLE  = 'welcome to ink'
+As well as provide a unique session key and secret:
+	config.action_controller.session = {
+	  :session_key => '_my_site_ink_session',
+	  :secret      => '128-bit hexidecimal key'
+	}
+
+I am aware that the current "authentication" system is quite janky, but I did warn you.
+I told you this was a _simple_ blog platform and that it is also my _very first_ public project.
+
+So you, like me, will just have to endure.
+
+
+Some things that it might be nice to know (after running script/ink/install, of course):
+
+	- There is a place for you to put some footer content at
+		app/views/content/_footer.html.erb
+	- There is a design/ directory where you can put whatever design files you need
+		(such as design/MyLogo.psd)
+	- Any and all styles you put in public/stylesheets/ (such as public/stylesheets/styles.css)
+		will not be harmed by future updates ink only needs the stylesheets in public/stylesheets/ink/
+	- Pretty much, if you come across a directory or file named ink or that has ink as a prominent part of its name,
+		don't touch it and we should all be okay.
+
+
+Once you're in the app, go to /login to test out your PASSWORD and make sure you get admin privileges.
+You should see the message "Successfully logged in." next to the ink logo and the option to create a "New post."
+
+Write, design, customize, enjoy!
+
+Dallas
